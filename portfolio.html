@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Sanjay | Portfolio</title>
+</head>
+
+<body>
+<style>@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+        body,
+        html {
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a23;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .neon-text,
+        #neon-text {
+            color: #bb86fc;
+            text-shadow: 0 0 5px #bb86fc, 0 0 10px #3700b3;
+            font-weight: 500;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-family: "Times New Roman";
+            border: 3px solid gray;
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 14px;
+            color: black !important;
+            background-image: radial-gradient(pink, yellow);
+        }
+
+        .profile-pic {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #bb86fc;
+            box-shadow: 0 0 20px #bb86fc;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .intro-animation {
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .border-neon {
+            border: 2px solid #bb86fc;
+            box-shadow: 0 0 5px #bb86fc;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px #bb86fc;
+        }
+
+        .btn-glow {
+            border: 1px solid #bb86fc;
+            color: white;
+            box-shadow: 0 0 10px #bb86fc;
+            transition: 0.3s;
+        }
+
+        .btn-glow:hover {
+            background-color: #bb86fc;
+            color: black;
+        }
+
+        .full-screen {
+            display: none;
+            height: 100vh;
+            padding-top: 70px;
+            box-sizing: border-box;
+        }
+
+        .full-screen.active {
+            display: block;
+        }
+
+        .timeline {
+            list-style: none;
+            padding-left: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15px;
+            width: 2px;
+            height: 0;
+            background-color: #bb86fc;
+            animation: growLine 1.5s ease-out forwards;
+        }
+
+        .timeline li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .timeline li:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline li::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #bb86fc;
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+            top: 4px;
+        }
+
+        @keyframes growLine {
+            to {
+                height: 100%;
+            }
+        }
+
+        /* Skills Section Enhancements */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 0 10px #bb86fc20;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #bb86fc80;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-icon img {
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .social-icon:hover img {
+            transform: scale(1.2);
+            filter: brightness(1.5) drop-shadow(0 0 5px #bb86fc);
+        }
+
+        .social-icon img {
+            filter: brightness(0) saturate(100%) invert(74%) sepia(76%) saturate(644%) hue-rotate(217deg) brightness(101%) contrast(97%);
+            transition: 0.3s ease-in-out;
+        }
+
+        .social-icon img:hover {
+            filter: brightness(0) saturate(100%) invert(52%) sepia(100%) saturate(325%) hue-rotate(176deg) brightness(105%) contrast(103%);
+        }
+
+</style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" id="neon-text" href="#" onclick="display('sectionHome')">Sanju</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="#sectionHome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#sectionAboutme">About</a>
+                <a class="nav-link" href="#sectionProjects">Projects</a>
+                <a class="nav-link" href="#sectionSkills">Skills</a>
+                <a class="nav-link" href="#sectionContact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div id="sectionHome" class="full-screen active">
+        <div class="container-fluid body mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center d-flex flex-column justify-content-center">
+                        <div>
+                            <img src="https://res.cloudinary.com/dvf7rhe2l/image/upload/c_crop,ar_1:1/v1751720269/Screenshot_2025-03-03-15-03-23-11_99c04817c0de5652397fc8b56c3b3817_kov5zy.jpg" class="profile-pic mt-5" />
+                            <h1 class="display-4 neon-text mt-3">Hi, I'm Sanjay</h1>
+                            <p class="lead">Cybersecurity | AI/ML | Web Developer | Data Science Enthusiast</p>
+                            <a href="#sectionProjects" class="btn btn-outline-light btn-glow mt-3 explore-btn">Explore My Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionAboutme" class="full-screen">
+        <div class="container-fluid body">
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <h2 class="neon-text mb-4">About Me</h2>
+                        <p class="lead">Hello! I'm Sanjay, a passionate tech enthusiast with a keen interest in Cybersecurity, AI/ML, Web Development, and Data Science. I love creating clean, responsive websites and working on smart technologies that solve real-world problems.</p>
+                        <hr class="text-light">
+                        <h4 class="neon-text">Education Timeline</h4>
+                        <ul class="timeline lead">
+                            <li><strong>B.Tech in Computer Science</strong> - Vaagdevi College of Engineering (2021–2025)</li>
+                            <li><strong>Intermediate</strong> - Shivani Junior College, Hanumakonda</li>
+                            <li><strong>SSC</strong> - ZPSS Peddakodepaka, Warangal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionProjects" class="full-screen">
+        <div class="container-fluid page-section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container py-5">
+                        <h2 class="neon-text mb-4">Projects</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card glass-card text-white">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Deep Learning Framework for Online Loan Fraud Detection</h5>
+                                        <p class="card-text">Used Python, KNN, SMOTE, and MLP to build a hybrid model that detects fraudulent loan applications. Aimed at increasing fintech trust and security.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card glass-card text-white mt-3">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Responsive Websites</h5>
+                                        <p class="card-text">Developed several static websites using HTML, CSS, and Bootstrap for UI/UX practice and web development experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionSkills" class="full-screen">
+        <div class="container-fluid">
+            <h2 class="section-title neon-text mb-5 text-center">⚡ Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h5>HTML, CSS & Bootstrap</h5>
+                    <p>Responsive design & elegant UI components</p>
+                </div>
+                <div class="skill-card">
+                    <h5>Python & ML Libraries</h5>
+                    <p>Scikit-learn, KNN, SMOTE, MLP for AI/ML development</p>
+                </div>
+                <div class="skill-card">
+                    <h5>SQL & Database</h5>
+                    <p>Data queries and schema design using MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <h5>Git & GitHub</h5>
+                    <p>Version control and team collaboration</p>
+                </div>
+                <div class="skill-card">
+                    <h5>UI/UX & Wireframing</h5>
+                    <p>Design thinking with futuristic layouts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionContact" class="full-screen">
+        <div class="container-fluid page-section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container py-5">
+                        <h2 class="neon-text mb-4">Contact Me</h2>
+                        <form action="https://formspree.io/f/xjkrnddo" method="POST">
+                            <div class="mb-3">
+                                <label class="form-label text-white">Name</label>
+                                <input type="text" name="name" class="form-control bg-light text-black border-neon" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Email</label>
+                                <input type="email" name="email" class="form-control bg-light text-black border-neon" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Message</label>
+                                <textarea name="message" class="form-control bg-light text-black border-neon" rows="4" required></textarea>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between">
+                                <div>
+                                    <button type="submit" class="btn btn-glow">Send Message</button>
+                                </div>
+                                <div class="text-center">
+                                    <a href="file:///C:/Users/sanja/OneDrive/Desktop/Sanjay_Kumar_Resume_%20(3).pdf" Download target="_blank" class="btn 					btn-outline-light btn-sm">Download Resume</a>
+                                </div>
+                            </div>
+                        </form>
+                        <hr class="text-light my-4">
+                        <div class="social-links mt-3 text-center">
+                            <a href="https://github.com/sanju20024" target="_blank" class="text-white mx-3">
+                                <i class="fab fa-github fa-2x" style="color: #bb86fc;"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sanjay-kumar-thadaka/" target="_blank" class="text-white mx-3">
+                                <i class="fab fa-linkedin fa-2x" style="color: #bb86fc;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.full-screen');
+    const links = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+
+            if (navbarCollapse.classList.contains('show')) {
+                $('.navbar-collapse').collapse('hide');
+            }
+        });
+    });
+
+    document.querySelector('.explore-btn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.full-screen').forEach(section => section.classList.remove('active'));
+        document.getElementById('sectionProjects').classList.add('active');
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const timeline = entry.target.querySelector('.timeline::before');
+                if (timeline) timeline.style.animation = 'growLine 1.5s ease-out forwards';
+            }
+        });
+    });
+
+    document.querySelectorAll('.timeline-container').forEach(container => observer.observe(container));
+});
+</script>
+</body>
+
+</html>
