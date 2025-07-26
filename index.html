@@ -22,22 +22,6 @@
     .glass-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #bb86fc; }
     .btn-glow { border: 1px solid #bb86fc; background-color: transparent; color: white; box-shadow: 0 0 10px #bb86fc; transition: 0.3s; }
     .btn-glow:hover { background-color: #bb86fc; color: black; box-shadow: 0 0 20px #bb86fc; }
-    .text-glow {
-    color: #fff;
-    font-family: sans-serif;
-    font-weight: bold;
-    
-    /* Stacking multiple text-shadows to create the neon effect */
-    text-shadow: 
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px #0fa,  /* Change this color for the outer glow */
-        0 0 82px #0fa,
-        0 0 92px #0fa,
-        0 0 102px #0fa,
-        0 0 151px #0fa;
-}
     .full-screen { display: none; height: 100vh; padding-top: 70px; box-sizing: border-box; overflow-y: auto; }
     .full-screen.active { display: block; animation: fadeInUp 0.5s ease-in-out; }
     .timeline { list-style: none; padding-left: 0; position: relative; }
@@ -115,8 +99,9 @@
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Fake Product Identification using Blockchain</h5>
                                     <p class="card-text">A system using Blockchain and QR codes to verify product authenticity and prevent counterfeiting.</p>
-                                    <div class="cert-footer mt-auto text-glow">
-                                        <a href="PROJECT+CERTIFICATE.pdf" target="_blank" style="color: #bb86fc; text-decoration: none;"><i class="fas fa-award" style="color: #f2aa18;"></i> Techwaves Project Expo 2025</a>
+                                    <div class="cert-footer mt-auto">
+                                        <div class="mt-auto"><span class="btn btn-glow"><a href="PROJECT+CERTIFICATE.pdf" target="_blank" class="project-link"><i class="fas fa-award" style="color: #f2aa18;"></i>Techwaves Project Expo 2025/span></div>
+                                </div>
                                     </div>
                                 </div>
                             </div>
