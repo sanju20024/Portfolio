@@ -106,7 +106,7 @@
                             <div class="card glass-card text-white">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Responsive Websites</h5>
-                                    <p class="card-text">A collection of 18+ static websites built to practice responsive design and UI/UX principles.</p>
+                                    <p class="card-text">A collection of interactive websites built to practice responsive design and UI/UX principles.</p>
                                     <div class="mt-auto"><span class="btn btn-glow">View Gallery</span></div>
                                 </div>
                             </div>
@@ -148,11 +148,12 @@
             </div>
         </div>
     </div>
-    <div id="sectionWeatherreport" class="full-screen">
+    
+    <div id="sectionWeatherPage" class="full-screen">
         <div class="container text-center">
             <button class="btn btn-glow mb-3" onclick="showSection('sectionStaticProjects')">← Back to Gallery</button>
             <div class="iframe-container">
-                <iframe src="weatherreport.html" style="width: 100%; height: 100%; border: none;"></iframe>
+                <iframe src="weather.html" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
         </div>
     </div>
@@ -193,46 +194,27 @@
     
 <script>
     function showSection(sectionId) {
-        document.querySelectorAll('.full-screen').forEach(section => {
-            section.classList.remove('active');
-        });
+        document.querySelectorAll('.full-screen').forEach(section => section.classList.remove('active'));
         document.getElementById(sectionId).classList.add('active');
         const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            $(navbarCollapse).collapse('hide');
-        }
+        if (navbarCollapse.classList.contains('show')) { $(navbarCollapse).collapse('hide'); }
     }
 
     document.addEventListener("DOMContentLoaded", function () {
+        // --- CHANGE: The list of projects is now much shorter ---
         const staticProjects = [
-            { title: "To-Do List", img: "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'internal', target: 'sectionTodoListPage', description: "Manage daily tasks with this clean and simple interface." },
-            { title: "Chat Page", img: "https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A classic chat application UI layout." },
-            { title: "Coding Cover Page", img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A developer-themed landing page concept." },
-            { title: "Happy Meals", img: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A vibrant and inviting restaurant homepage design." },
-            { title: "Advanced Tech Cover", img: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A modern UI for a technology company." },
-            { title: "News Page", img: "https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A layout for a modern online news portal." },
-            { title: "Hotel Booking", img: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A responsive design for a hotel booking website." },
-            { title: "Cricketer Info", img: "https://images.pexels.com/photos/140511/pexels-photo-140511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A tribute page layout for a sports personality." },
-            { title: "COVID-19 Info", img: "https://images.pexels.com/photos/3992933/pexels-photo-3992933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "An informational page design for health awareness." },
-            { title: "Goa Tourism", img: "https://images.pexels.com/photos/1007427/pexels-photo-1007427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A travel and tourism website concept for Goa." },
-            { title: "Movie Info", img: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A detailed movie information page layout." },
-            { title: "iPhone Specs", img: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A product specification page for a smartphone." },
-            { title: "Conference Info", img: "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A landing page for a virtual tech conference." },
-            { title: "Quiz Page", img: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A user interface for an online coding quiz." },
-            { title: "Portfolio", img: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A personal portfolio template for developers." },
-            { title: "Podcast Page", img: "https://images.pexels.com/photos/3771045/pexels-photo-3771045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "An elegant UI for a podcast streaming service." },
-            { title: "Sleep Music Page", img: "https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A relaxing UI for a sleep and meditation app." },
-            { title: "Book Store", img: "https://images.pexels.com/photos/2228580/pexels-photo-2228580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'external', target: '#', description: "A feature page for a book in an online bookstore." }
+            { title: "To-Do List", img: "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'internal', target: 'sectionTodoListPage', description: "An interactive to-do list that saves your tasks." },
+            { title: "Weather Report", img: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'internal', target: 'sectionWeatherPage', description: "Check the live weather for any city in the world." }
         ];
 
         const container = document.getElementById("static-projects-container");
         let allProjectsHTML = "";
         staticProjects.forEach(project => {
             let actionAttribute = "";
-            let buttonText = "View Project"; // Default text for external links
+            let buttonText = "View Project";
             if (project.actionType === 'internal') {
                 actionAttribute = `onclick="showSection('${project.target}')" href="#"`;
-                buttonText = "View Page"; // Specific text for internal pages
+                buttonText = "View Page";
             } else {
                 actionAttribute = `href="${project.target}" target="_blank"`;
             }
