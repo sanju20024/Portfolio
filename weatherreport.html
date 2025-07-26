@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      color: white;
+      text-align: center;
+      transition: background 0.5s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1c1c1c;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-overlay {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.85;
+      z-index: -1;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .weather-box {
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.45);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 350px;
+      width: 90%;
+      z-index: 1;
+      position: relative;
+    }
+
+    .weather-box h1,
+    .weather-box h2,
+    .weather-box h3,
+    .weather-box p {
+      margin: 10px 0;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-overlay" id="bgOverlay"></div>
+
+  <div class="weather-box">
+    <h1>🌦️ Weather Dashboard</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeatherByCity()">Get Weather</button>
+    <h2 id="location">--</h2>
+    <h3 id="temp">-- °C</h3>
+    <p id="condition">--</p>
+    <p id="details"></p>
+  </div>
+
+  <script>
+    const apiKey = "6e0667599204c4e79aaac9602ef506a6";
+
+    function getWeatherByCity() {
+      const city = document.getElementById("cityInput").value.trim();
+      if (!city) {
+        alert("Please enter a city name.");
+        return;
+      }
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.cod !== 200) throw new Error(data.message);
+
+          const temp = Math.round(data.main.temp);
+          const weather = data.weather[0].main.toLowerCase();
+          const desc = data.weather[0].description;
+          const humidity = data.main.humidity;
+          const wind = data.wind.speed;
+
+          document.getElementById("location").textContent = data.name;
+          document.getElementById("temp").textContent = `${temp} °C`;
+          document.getElementById("condition").textContent = desc;
+          document.getElementById("details").innerHTML = `Humidity: ${humidity}%<br>Wind Speed: ${wind} m/s`;
+
+          changeBackground(weather);
+        })
+        .catch((err) => {
+          console.error("API error:", err);
+          alert("City not found or weather data unavailable.");
+
+          document.getElementById("location").textContent = "--";
+          document.getElementById("temp").textContent = "-- °C";
+          document.getElementById("condition").textContent = "--";
+          document.getElementById("details").innerHTML = "";
+
+          document.getElementById("bgOverlay").style.backgroundImage = "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1350&q=80')";
+        });
+    }
+
+    function changeBackground(condition) {
+      let bgUrl = "";
+
+      if (condition.includes("rain")) {
+        bgUrl = "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1350&q=80";
+      } else if (condition.includes("clear")) {
+        bgUrl = "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1350&q=80";
+      } else if (condition.includes("cloud")) {
+        bgUrl = "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1350&q=80";
+      } else if (condition.includes("mist") || condition.includes("fog") || condition.includes("haze")) {
+        bgUrl = "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1350&q=80";
+      } else if (condition.includes("snow")) {
+        bgUrl = "https://images.unsplash.com/photo-1608889175122-bb7a2a5a9c25?auto=format&fit=crop&w=1350&q=80";
+      } else {
+        bgUrl = "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1350&q=80";
+      }
+
+      document.getElementById("bgOverlay").style.backgroundImage = `url('${bgUrl}')`;
+    }
+  </script>
+</body>
+</html>
