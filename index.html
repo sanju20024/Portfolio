@@ -34,6 +34,10 @@
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
     .skill-card { background: rgba(255, 255, 255, 0.05); padding: 20px; text-align: center; border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .skill-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px #bb86fc80; }
+    .skill-card-link { text-decoration: none; color: white; }
+    .skill-card-link:hover { text-decoration: none; color: white; }
+    .skill-card .cert-footer { background: none; border-top: 1px solid rgba(187, 134, 252, 0.2); font-size: 0.9rem; color: #bb86fc; padding-top: 15px; margin-top: 15px; font-weight: bold; }
+    .skill-card .cert-footer i { color: #f2aa18; }
     .social-links a i { filter: brightness(0) saturate(100%) invert(74%) sepia(76%) saturate(644%) hue-rotate(217deg) brightness(101%) contrast(97%); transition: transform 0.3s ease, filter 0.3s ease; }
     .social-links a:hover i { transform: scale(1.2); filter: brightness(1.5) drop-shadow(0 0 5px #bb86fc); }
     .gallery-header { background-color: #1a1a3d; color: white; padding: 40px 0; text-align: center; border-bottom: 2px solid #bb86fc; }
@@ -91,6 +95,19 @@
                 <h2 class="neon-text mb-4 text-center">Projects</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="#" target="_blank" class="project-link">
+                            <div class="card glass-card text-white">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Fake Product Identification using Blockchain</h5>
+                                    <p class="card-text">A system using Blockchain and QR codes to verify product authenticity and prevent counterfeiting.</p>
+                                    <div class="cert-footer mt-auto">
+                                        <a href="#PROJECT+CERTIFICATE.pdf" target="_blank" style="color: #bb86fc; text-decoration: none;"><i class="fas fa-award" style="color: #f2aa18;"></i> Techwaves Project Expo 2025</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <a href="https://github.com/sanju20024/Deep-Learning-Framework-for-Online-Loan-Fraud-Prevention" target="_blank" class="project-link">
                             <div class="card glass-card text-white">
                                 <div class="card-body d-flex flex-column">
@@ -112,17 +129,6 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <a href="#" target="_blank" class="project-link">
-                            <div class="card glass-card text-white">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Data Visualization Dashboard</h5>
-                                    <p class="card-text">An interactive dashboard built with Python to visualize complex datasets, providing insights through charts and graphs.</p>
-                                    <div class="mt-auto"><span class="btn btn-glow">View Project</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -135,7 +141,7 @@
             <button class="btn btn-glow mt-2" onclick="showSection('sectionProjects')">← Back to Main Projects</button>
         </div>
         <div class="container mt-5">
-            <div class="row" id="static-projects-container">
+            <div class="row justify-content-center" id="static-projects-container">
                 </div>
         </div>
     </div>
@@ -159,18 +165,63 @@
     </div>
 
     <div id="sectionSkills" class="full-screen">
-        <div class="container d-flex align-items-center justify-content-center h-100">
-            <div>
-                <h2 class="neon-text mb-5 text-center">⚡ Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card"><h5>Front-End Development</h5><p>Building responsive, mobile-first websites with modern HTML, CSS, Bootstrap, and JavaScript.</p></div>
-                    <div class="skill-card"><h5>Machine Learning</h5><p>Applying models like KNN and MLP with Scikit-learn to analyze data and build predictive applications.</p></div>
-                    <div class="skill-card"><h5>SQL & Databases</h5><p>Designing schemas and writing efficient queries to manage and retrieve data from MySQL databases.</p></div>
-                    <div class="skill-card"><h5>Version Control</h5><p>Using Git and GitHub for effective version control, branching, and team collaboration.</p></div>
+    <div class="container d-flex align-items-center justify-content-center h-100">
+        <div>
+            <h2 class="neon-text mb-5 text-center">⚡ Technical Skills & Certifications</h2>
+            <div class="row justify-content-center">
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="https://www.hackerrank.com/certificates/5694e024f384" target="_blank" class="skill-card-link">
+                        <div class="skill-card">
+                            <h5>Python (Basic)</h5>
+                            <p>Demonstrated proficiency in core Python programming concepts, data structures, and fundamental syntax through HackerRank's skill assessment.</p>
+                            <div class="cert-footer">
+                                <i class="fas fa-certificate"></i> HackerRank Certified
+                            </div>
+                        </div>
+                    </a>
                 </div>
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="https://www.hackerrank.com/certificates/5696331bd7fc" target="_blank" class="skill-card-link">
+                        <div class="skill-card">
+                            <h5>SQL (Advanced)</h5>
+                            <p>Validated advanced skills in complex SQL queries, including joins, subqueries, and advanced functions, by passing the HackerRank certification test.</p>
+                            <div class="cert-footer">
+                                <i class="fas fa-certificate"></i> HackerRank Certified
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="https://certificates.ccbp.in/intensive/responsive-website?id=LOREVZAXEJ" target="_blank" class="skill-card-link">
+                        <div class="skill-card">
+                            <h5>Responsive Web Design</h5>
+                            <p>Certified in building mobile-first, responsive web layouts using modern CSS techniques like Flexbox and the Bootstrap framework.</p>
+                            <div class="cert-footer">
+                                <i class="fas fa-award"></i> NxtWave Certified
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <a href="https://certificates.ccbp.in/intensive/static-website?id=DFTWRZWUWB" target="_blank" class="skill-card-link">
+                        <div class="skill-card">
+                            <h5>Static Web Development</h5>
+                            <p>Completed comprehensive training in foundational web technologies, demonstrating the ability to build structured and styled static websites using HTML, CSS, and Bootstrap.</p>
+                             <div class="cert-footer">
+                                <i class="fas fa-award"></i> NxtWave Certified
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
+</div>
 
     <div id="sectionContact" class="full-screen">
        <div class="container d-flex align-items-center justify-content-center h-100">
@@ -201,7 +252,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        // --- CHANGE: The list of projects is now much shorter ---
         const staticProjects = [
             { title: "To-Do List", img: "https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'internal', target: 'sectionTodoListPage', description: "An interactive to-do list that saves your tasks." },
             { title: "Weather Report", img: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", actionType: 'internal', target: 'sectionWeatherPage', description: "Check the live weather for any city in the world." }
