@@ -24,43 +24,43 @@
         z-index: -1;
     }
 
-    .neon-text { color: #bb86fc; text-shadow: 0 0 5px #bb86fc, 0 0 10px #3700b3, 0 0 15px #3700b3; font-weight: 500; }
-    .profile-pic { height: 200px; width: 200px; object-fit: cover; border-radius: 50%; border: 3px solid #bb86fc; box-shadow: 0 0 20px #bb86fc; animation: fadeInUp 1s ease-out; }
+    .neon-text { color: #c09eff; text-shadow: 0 0 5px #c09eff, 0 0 10px #5e35b1, 0 0 15px #5e35b1; font-weight: 500; }
+    .profile-pic { height: 200px; width: 200px; object-fit: cover; border-radius: 50%; border: 3px solid #c09eff; box-shadow: 0 0 20px #c09eff; animation: fadeInUp 1s ease-out; }
     .intro-animation { animation: fadeInUp 1.2s ease-in-out; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .border-neon { border: 2px solid #bb86fc; box-shadow: 0 0 8px #bb86fc; background: rgba(255, 255, 255, 0.1) !important; color: white !important; }
+    .border-neon { border: 2px solid #c09eff; box-shadow: 0 0 8px #c09eff; background: rgba(255, 255, 255, 0.1) !important; color: white !important; }
     .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2); padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
-    .glass-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #bb86fc; }
-    .btn-glow { border: 1px solid #bb86fc; background-color: transparent; color: white; box-shadow: 0 0 10px #bb86fc; transition: 0.3s; }
-    .btn-glow:hover { background-color: #bb86fc; color: black; box-shadow: 0 0 20px #bb86fc; }
+    .glass-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #c09eff; }
+    .btn-glow { border: 1px solid #c09eff; background-color: transparent; color: white; box-shadow: 0 0 10px #c09eff; transition: 0.3s; padding: 10px 20px; border-radius: 5px; }
+    .btn-glow:hover { background-color: #c09eff; color: black; box-shadow: 0 0 20px #c09eff; }
     .full-screen { display: none; height: 100vh; padding-top: 70px; box-sizing: border-box; overflow-y: auto; }
     .full-screen.active { display: block; animation: fadeInUp 0.5s ease-in-out; }
     .timeline { list-style: none; padding-left: 0; position: relative; }
-    .timeline::before { content: ''; position: absolute; top: 0; left: 15px; width: 2px; height: 0; background-color: #bb86fc; animation: growLine 2s ease-out forwards; }
+    .timeline::before { content: ''; position: absolute; top: 0; left: 15px; width: 2px; height: 0; background-color: #c09eff; animation: growLine 2s ease-out forwards; }
     @keyframes growLine { to { height: 100%; } }
     .timeline li { position: relative; padding-left: 40px; margin-bottom: 20px; }
-    .timeline li::before { content: ''; width: 10px; height: 10px; background: #bb86fc; border-radius: 50%; position: absolute; left: 10px; top: 4px; box-shadow: 0 0 10px #bb86fc; }
+    .timeline li::before { content: ''; width: 10px; height: 10px; background: #c09eff; border-radius: 50%; position: absolute; left: 10px; top: 4px; box-shadow: 0 0 10px #c09eff; }
     .project-link { color: inherit; text-decoration: none; display: block; height: 100%; }
     .project-link:hover { color: inherit; text-decoration: none; }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
     .skill-card { background: rgba(255, 255, 255, 0.05); padding: 20px; text-align: center; border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
-    .skill-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px #bb86fc80; }
+    .skill-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px #c09eff80; }
     .skill-card-link { text-decoration: none; color: white; display: block; height: 100%; }
     .skill-card-link:hover { text-decoration: none; color: white; }
-    .skill-card .cert-footer { background: none; border-top: 1px solid rgba(187, 134, 252, 0.2); font-size: 0.9rem; color: #bb86fc; padding-top: 15px; margin-top: 15px; font-weight: bold; }
+    .skill-card .cert-footer { background: none; border-top: 1px solid rgba(192, 158, 255, 0.2); font-size: 0.9rem; color: #c09eff; padding-top: 15px; margin-top: 15px; font-weight: bold; }
     .skill-card .cert-footer i { color: #f2aa18; }
     .social-links a i { filter: brightness(0) saturate(100%) invert(74%) sepia(76%) saturate(644%) hue-rotate(217deg) brightness(101%) contrast(97%); transition: transform 0.3s ease, filter 0.3s ease; }
-    .social-links a:hover i { transform: scale(1.2); filter: brightness(1.5) drop-shadow(0 0 5px #bb86fc); }
-    .gallery-header { background-color: #1a1a3d; color: white; padding: 40px 0; text-align: center; border-bottom: 2px solid #bb86fc; }
-    .project-card { border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 15px; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 0 10px rgba(187, 134, 252, 0.2); background-color: rgba(255, 255, 255, 0.05); color: white; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(187, 134, 252, 0.5); }
+    .social-links a:hover i { transform: scale(1.2); filter: brightness(1.5) drop-shadow(0 0 5px #c09eff); }
+    .gallery-header { background-color: #1a1a3d; color: white; padding: 40px 0; text-align: center; border-bottom: 2px solid #c09eff; }
+    .project-card { border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 15px; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 0 10px rgba(192, 158, 255, 0.2); background-color: rgba(255, 255, 255, 0.05); color: white; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(192, 158, 255, 0.5); }
     .project-image { border-top-left-radius: 15px; border-top-right-radius: 15px; height: 180px; object-fit: cover; }
-    .iframe-container { width: 100%; height: calc(100vh - 150px); border: 2px solid #bb86fc; border-radius: 8px; box-shadow: 0 0 10px #bb86fc; }
+    .iframe-container { width: 100%; height: calc(100vh - 150px); border: 2px solid #c09eff; border-radius: 8px; box-shadow: 0 0 10px #c09eff; }
 
     /* Styles for AI Features */
     #ai-summary-container {
-        background: rgba(187, 134, 252, 0.1);
-        border: 1px solid #bb86fc;
+        background: rgba(192, 158, 255, 0.1);
+        border: 1px solid #c09eff;
         border-radius: 8px;
         padding: 1.5rem;
         margin-top: 1.5rem;
@@ -83,8 +83,8 @@
         background: #0a0a23;
         padding: 2rem;
         border-radius: 15px;
-        border: 1px solid #bb86fc;
-        box-shadow: 0 0 25px #bb86fc;
+        border: 1px solid #c09eff;
+        box-shadow: 0 0 25px #c09eff;
         width: 90%;
         max-width: 600px;
         max-height: 80vh;
@@ -105,7 +105,7 @@
         width: 48px;
         height: 48px;
         border: 5px solid #FFF;
-        border-bottom-color: #bb86fc;
+        border-bottom-color: #c09eff;
         border-radius: 50%;
         display: inline-block;
         box-sizing: border-box;
@@ -149,11 +149,11 @@
    <div class="container d-flex align-items-center justify-content-center h-100">
         <div>
             <h2 class="neon-text mb-4">About Me</h2>
-            <p class="lead" id="about-me-text">Hello! I'm Sanjay, a dedicated and curious developer driven by a passion for solving real-world problems. From building secure web applications to exploring the depths of machine learning, I thrive on turning complex challenges into elegant, efficient solutions. I am currently seeking opportunities to contribute my skills to a forward-thinking team and help build the future of technology.</p>
+            <p class="lead" id="about-me-text">I am a passionate and results-oriented developer with a strong foundation in web development, cybersecurity, and AI/ML. My experience includes building secure, scalable applications and leveraging machine learning models to solve complex problems. I am driven by a desire to innovate and am currently seeking a challenging role where I can contribute to cutting-edge projects and continue to grow my skills.</p>
             <a href="Sanjay_Kumar_Resume.pdf" download class="btn btn-glow mb-3">Download Resume</a>
-            <button id="summarize-about-btn" class="btn btn-glow mb-5">✨ Ask AI for a Quick Summary</button>
+            <button id="summarize-about-btn" class="btn btn-glow mb-5">✨ Get AI-Powered Summary</button>
             <div id="ai-summary-container"></div>
-            <hr style="background-color: #bb86fc;">
+            <hr style="background-color: #c09eff;">
             <h4 class="neon-text mt-5">Education Timeline</h4>
             <ul class="timeline lead">
                 <li><strong>B.Tech in Computer Science</strong> - Vaagdevi College of Engineering (2021–2025)</li>
@@ -268,7 +268,7 @@
                 <div class="mb-3"><label class="form-label">Message</label><textarea name="message" class="form-control border-neon" rows="4" required></textarea></div>
                 <button type="submit" class="btn btn-glow">Send Message</button>
             </form>
-            <hr style="background-color: #bb86fc; margin-top: 40px;">
+            <hr style="background-color: #c09eff; margin-top: 40px;">
             <div class="social-links mt-3 text-center">
                 <a href="https://github.com/sanju20024" target="_blank" class="text-white mx-3"><i class="fab fa-github fa-2x"></i></a>
                 <a href="https://www.linkedin.com/in/sanjay-kumar-thadaka/" target="_blank" class="text-white mx-3"><i class="fab fa-linkedin fa-2x"></i></a>
@@ -319,19 +319,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainProjects = [
         { 
             title: "Online Loan Fraud Detection", 
-            description: "Used Python, KNN, and MLP to build a hybrid model that detects fraudulent loan applications.",
+            description: "Developed a hybrid machine learning model using Python, KNN, and MLP to accurately identify and flag fraudulent online loan applications, enhancing security and minimizing financial risk.",
             link: "https://github.com/sanju20024/Deep-Learning-Framework-for-Online-Loan-Fraud-Prevention",
             buttonText: "View Project"
         },
         { 
             title: "Responsive Websites", 
-            description: "A collection of interactive websites built to practice responsive design and UI/UX principles.",
+            description: "Designed and built a series of fully responsive websites, demonstrating strong skills in modern UI/UX principles, HTML, CSS, and Bootstrap.",
             action: () => showSection('sectionStaticProjects'),
             buttonText: "View Gallery"
         },
         { 
             title: "Fake Product Identification", 
-            description: "A system using Blockchain and QR codes to verify product authenticity and prevent counterfeiting.",
+            description: "Engineered a blockchain-based system with QR code integration to provide a secure and transparent method for verifying product authenticity and combating counterfeit goods.",
             link: "PROJECT+CERTIFICATE.pdf",
             buttonText: `<i class="fas fa-award"></i> View Certificate`
         }
