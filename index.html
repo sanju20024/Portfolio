@@ -151,7 +151,7 @@
             <h2 class="neon-text mb-4">About Me</h2>
             <p class="lead" id="about-me-text">I am a passionate and results-oriented developer with a strong foundation in web development, cybersecurity, and AI/ML. My experience includes building secure, scalable applications and leveraging machine learning models to solve complex problems. I am driven by a desire to innovate and am currently seeking a challenging role where I can contribute to cutting-edge projects and continue to grow my skills.</p>
             <a href="Sanjay_Kumar_Resume.pdf" download class="btn btn-glow mb-3">Download Resume</a>
-            <a id="summarize-about-btn" class="btn btn-glow mb-5">✨ Get AI-Powered Summary</a>
+            <button id="summarize-about-btn" class="btn btn-glow mb-5">✨ Get AI-Powered Summary</button>
             <div id="ai-summary-container"></div>
             <hr style="background-color: #c09eff;">
             <h4 class="neon-text mt-5">Education Timeline</h4>
@@ -360,21 +360,14 @@ document.addEventListener("DOMContentLoaded", function () {
     async function callGemini(prompt, elementToUpdate) {
         elementToUpdate.innerHTML = '<div class="loader"></div>';
         
-        const apiKey = ""; // API key is handled by the environment
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        // This is the new, secure API route on Vercel
+        const apiUrl = '/api/gemini';
         
-        const payload = {
-            contents: [{
-                role: "user",
-                parts: [{ text: prompt }]
-            }]
-        };
-
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({ prompt: prompt }) // Send the prompt in the body
             });
 
             if (!response.ok) {
